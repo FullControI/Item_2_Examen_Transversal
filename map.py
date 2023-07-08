@@ -18,9 +18,9 @@ while True:
         print("===================================================")
         print("Dirección desde " + (orig) + " a " + (dest))
         print("Duración del viaje: " + (json_data["route"]["formattedTime"]))
-        print("Distancia en Kilometros: " + str("{:.2f}".format((json_data["route"]["distance"])*1.61)) + " kms. ")
+        print("Distancia en Kilometros: " + str("{:.1f}".format((json_data["route"]["distance"])*1.61)) + " kms. ")
         for each in json_data["route"]["legs"][0]["maneuvers"]:
-            print((each["narrative"]) + " (" + str("{:.2f}".format((each["distance"])*1.61) + "km)"))
+            print((each["narrative"]) + " (" + str("{:.1f}".format((each["distance"])*1.61) + "km)"))
     elif json_status == 402:
         print("*******************************************************")
         print("Status Code: " + str(json_status) + "; Invalid user inputs for one or both locations.")
